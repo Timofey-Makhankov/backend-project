@@ -1,0 +1,10 @@
+name: print-hello-world
+run-name: ${{ github.actor }} is learning GitHub Actions
+
+on: [push]
+jobs:
+  echoing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Hello World!"
