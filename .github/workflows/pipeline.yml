@@ -8,3 +8,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: echo "Hello World!"
+
+  using-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.my_secret }}
+        run: |
+          echo "$SUPER_SECRET"
